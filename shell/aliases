@@ -21,7 +21,7 @@ alias gpush='git push'
 alias gpull='git pull'
 # alias laravel='~/.composer/vendor/bin/laravel'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)"'
-alias ebash='vim ~/.bash_aliases'
+alias ebash='vim ~/dotfiles/shell/aliases'
 alias burp='java -jar /opt/burp.jar'
 alias cpu-temperature='sensors'
 alias hdd-temperature='sudo hddtemp /dev/sda'
@@ -40,21 +40,22 @@ watch -n1 "lscpu | grep 'МГц' | awk '{print $1}'"
 }
 
 
-deploy-bbro() {
+push() {
             if [[ ! $# -eq 0 ]] ; then
                 git add .
                 git commit -m "$*"
             fi
             git push
+}
+
+
+deploy-bbro() {
+            push $*
             envoy run deploy-bbro
 }
 
 deploy-pest() {
-            if [[ ! $# -eq 0 ]] ; then
-                git add .
-                git commit -m "$*"
-            fi
-            git push
+            push $*
             envoy run deploy-pest
 }
 
