@@ -1,6 +1,5 @@
 # disable caps
 alias discaps='xmodmap -e "keycode 66 = Escape NoSymbol Escape" -e "clear lock"'
-discaps
 
 # ------------------------------
 # Aliases
