@@ -39,6 +39,14 @@ watch -n1 "lscpu | grep 'МГц' | awk '{print $1}'"
 }
 
 
+pushup(){
+
+    push $*
+    envoy run deploy
+
+}
+
+
 push() {
             if [[ ! $# -eq 0 ]] ; then
                 git add .
