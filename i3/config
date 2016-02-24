@@ -39,18 +39,16 @@ assign [class="x-terminal-emulator"] $w_term
 
 
 exec_always ~/dotfiles/i3/2moni.sh
+exec_always ~/dotfiles/i3/kbfix.sh
 
-#exec ~/.i3/conky/brightnesslevel.sh set 30
+
 exec --no-startup-id nm-applet
+exec --no-startup-id volti
 exec --no-startup-id gnome-settings-daemon
 exec pulseaudio --start
-exec compton -CGb
 
 
 workspace_auto_back_and_forth yes
-
-
-
 
 
 exec --no-startup-id firefox
@@ -61,6 +59,7 @@ exec --no-startup-id terminator
 exec --no-startup-id nemo
 exec --no-startup-id xsetroot -solid "#060606"
 
+exec setxkbmap -option grp:alt_shift_toggle "us,ru" -option grp_led:caps
 
 # class                 border  backgr. text    indicator
  client.focused           #111 #232323 #ffffff #336699
@@ -237,10 +236,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+mod1+space exec "setxkbmap ru"
-bindsym Menu exec "setxkbmap ru"
-bindsym Super_R exec "setxkbmap us"
-bindsym $mod+space exec "setxkbmap us"
+#bindsym $mod+mod1+space exec "setxkbmap ru"
+#bindsym Menu exec "setxkbmap ru"
+#bindsym Super_R exec "setxkbmap us"
+#bindsym $mod+space exec "setxkbmap us"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {

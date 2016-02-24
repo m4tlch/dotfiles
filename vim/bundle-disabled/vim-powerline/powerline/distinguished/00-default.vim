@@ -63,11 +63,6 @@ call Pl#Statusline(
 		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24))
 		\ ),
 	\
-	\ Pl#Segment(" $ft %{strlen(&ft) ? &ft : 'n/a'} ",
-		\ Pl#HiCurrent(   Pl#FG(246), Pl#BG(236)),
-		\ Pl#HiInsert(    Pl#FG( 75), Pl#BG( 24)),
-		\ ),
-	\
 	\ Pl#Segment(" %3p%% ",
 		\ Pl#HiCurrent(   Pl#FG(250), Pl#BG(240)),
 		\ Pl#HiInsert(    Pl#FG(117), Pl#BG( 31)),

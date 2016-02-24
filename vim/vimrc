@@ -1,9 +1,13 @@
 set nocompatible                  " Must come first because it changes other options.
-:set runtimepath=~/dotfiles/vim,~/dotfiles/vim/after,$VIMRUNTIME
+set runtimepath=~/dotfiles/vim,~/dotfiles/vim/after,$VIMRUNTIME
 source ~/dotfiles/vim/autoload/pathogen.vim
 
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#pathogen#helptags()
+
+
+
+
 
 "-----------------------------------------------------------
 "--[ Basic setup] ------------------------------------------
@@ -53,10 +57,12 @@ set expandtab                     " Use spaces instead of tabs
 set laststatus=2                  " Show the status line all the time
 
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Automatic fold settings for specific files. Uncomment to use.
 autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+
+
 
 " The following are taken from the blog post of Steve Losh
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
@@ -138,10 +144,13 @@ set spelllang=en_gb
 " Theme
 "
 " set background=light
-set guifont=Input\ Mono\ Semi-Light\ 14
+set guifont=Input\ Mono\ 14
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
+set go-=l " Removes left hand scroll bar
+set go-=r " Removes left hand scroll bar
+set go-=R " Removes left hand scroll bar
 set linespace=10
 
 
@@ -165,7 +174,8 @@ if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gno
   set t_Co=256
 endif
 
-colorscheme xoria256
+colorscheme atom-dark-256
+hi statusline ctermfg=7 ctermbg=0
 "colorscheme peel
 " In order to adapt indents etc to work well
 " with other people's code
@@ -200,6 +210,10 @@ nnoremap <leader><space> :noh<cr>
 map <C-z> <Esc>
 nnoremap <C-z> <Esc>u
 imap <C-z> <Esc>ui
+noremap <C-w> :q<cr>
+
+
+
 
 " normal copy/paste
 :set clipboard=unnamedplus
@@ -210,6 +224,29 @@ imap <C-z> <Esc>ui
 :smap <C-v> <C-g>p
 :smap <Tab> <C-g>1>
 :smap <S-Tab> <C-g>1<
+
+
+
+" --------------------------------------------------------
+" --[ iphp ]----------------------------------------
+" --------------------------------------------------------
+
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+
+
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
+function! IPhpExpandClass()
+  call PhpExpandClass()
+  call feedkeys('a', 'n')
+endfunction
+
+autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
 
 " --------------------------------------------------------
@@ -281,3 +318,4 @@ nmap <D-0> g^
 
 nnoremap j gj
 nnoremap k gk
+
