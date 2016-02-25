@@ -174,32 +174,44 @@ bindsym $mod+a focus parent
 # switch to workspace
 bindsym $mod+1 workspace $w_browser
 bindsym $mod+KP_1 workspace $w_browser
+
 bindsym $mod+2 workspace $w_ide
 bindsym $mod+KP_2 workspace $w_ide
+
 bindsym $mod+3 workspace $w_term
 bindsym $mod+KP_3 workspace $w_term
+
 bindsym $mod+4 workspace $w_music
 bindsym $mod+KP_4 workspace $w_music
+
 bindsym $mod+5 workspace $w_chat
 bindsym $mod+KP_5 workspace $w_chat
+
 bindsym $mod+6 workspace $w_files
 bindsym $mod+KP_6 workspace $w_files
+
 bindsym $mod+9 workspace additional
 bindsym $mod+KP_9 workspace additional
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $w_browser
 bindsym $mod+Shift+KP_1 move container to workspace $w_browser
+
 bindsym $mod+Shift+2 move container to workspace $w_ide
 bindsym $mod+Shift+KP_2 move container to workspace $w_ide
+
 bindsym $mod+Shift+3 move container to workspace $w_term
 bindsym $mod+Shift+KP_3 move container to workspace $w_term
+
 bindsym $mod+Shift+4 move container to workspace $w_music
 bindsym $mod+Shift+KP_4 move container to workspace $w_music
+
 bindsym $mod+Shift+5 move container to workspace $w_chat
 bindsym $mod+Shift+KP_5 move container to workspace $w_chat
+
 bindsym $mod+Shift+6 move container to workspace $w_files
 bindsym $mod+Shift+KP_6 move container to workspace $w_files
+
 bindsym $mod+Shift+9 move container to workspace additional
 bindsym $mod+Shift+KP_9 move container to workspace additional
 
