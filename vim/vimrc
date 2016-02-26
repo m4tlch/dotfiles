@@ -105,3 +105,19 @@ omap / <Plug>(easymotion-tn)
 " different highlight method and have some other features )
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
+
+
+" Numbers
+
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+
+
+" autoformat
+
+nnoremap <F6> :Autoformat<cr>
+
+let g:formatdef_phpcbf = '"phpcbf"'
+let g:formatters_php = ['phpcbf']
+
+

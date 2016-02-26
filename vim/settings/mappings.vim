@@ -76,5 +76,11 @@ imap <C-z> <Esc>ui
 :smap <C-x> <C-g>x
 :imap <C-v> <Esc>pi
 :smap <C-v> <C-g>p
+
+" make normal tab?
 :smap <Tab> <C-g>1>
 :smap <S-Tab> <C-g>1<
+
+
+" For when you forget to sudo.. Really Write the file.
+cmap w!! w !sudo tee % >/dev/null
