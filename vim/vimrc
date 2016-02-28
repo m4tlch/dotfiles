@@ -1,123 +1,37 @@
-set nocompatible                  " Must come first because it changes other options.
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 
-"-----------------------------------------------------------
-"--[ Bootstraps ] ------------------------------------------
-"----------------------------------------------------------
+Plugin 'VundleVim/Vundle.vim'
+
+" snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdTree'
+Plugin 'jwalton512/vim-blade'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tmhedberg/matchit'
+Plugin 'tpope/vim-surround'
+
+Bundle 'gosukiwi/vim-atom-dark'
 
 
-set runtimepath=~/dotfiles/vim,~/dotfiles/vim/after,$VIMRUNTIME
+call vundle#end()            " required
 
+filetype plugin indent on    " required
 let mapleader = ","
-source ~/dotfiles/vim/autoload/pathogen.vim
 
 " my own preferences
 source ~/dotfiles/vim/settings/basic.vim
 source ~/dotfiles/vim/settings/mappings.vim
 source ~/dotfiles/vim/settings/appearance.vim
-
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#pathogen#helptags()
-
-" Useful status information at bottom of screen
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
-" Automatic fold settings for specific files. Uncomment to use.
-"autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-
-nmap <C-b> :NERDTreeToggle<cr>
-
-" Ctrl-P changes:
-nmap ; :CtrlPBuffer<CR>
-nnoremap <leader>p :CtrlPMRU<CR>
-
-let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|beam|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
-
-" Function for deleting trailing white space.
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-" Save on lost focus
-au FocusLost * :wa
-" Delete trailing white space upon saving files
-autocmd BufWrite * :call DeleteTrailingWS()
-
-" --------------------------------------------------------
-" --[ iphp ]----------------------------------------
-" --------------------------------------------------------
-
-function! IPhpInsertUse()
-  call PhpInsertUse()
-  call feedkeys('a',  'n')
-endfunction
-
-function! IPhpExpandClass()
-  call PhpExpandClass()
-  call feedkeys('a', 'n')
-endfunction
-
-
-autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
-
-autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
-
-
-" --------------------------------------------------------
-" --[ EasyMotion ]----------------------------------------
-" --------------------------------------------------------
-
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-
-" Search
-
-" Gif config
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-
-" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
-" Without these mappings, `n` & `N` works fine. (These mappings just provide
-" different highlight method and have some other features )
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-
-" Numbers
-
-nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
-
-
-" autoformat
-
-nnoremap <F6> :Autoformat<cr>
-
-let g:formatdef_phpcbf = '"phpcbf"'
-let g:formatters_php = ['phpcbf']
-
+source ~/dotfiles/vim/settings/plugins.vim
 

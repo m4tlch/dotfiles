@@ -29,46 +29,61 @@ alias hdd-usage='df -h'
 alias casper='casperjs --ignore-ssl-errors=true --ssl-protocol=any'
 alias ff32='/opt/firefox/firefox -jsconsole'
 alias ff42='/opt/firefox42/firefox -jsconsole'
-alias symlink='ln -s' #kuda shto
+alias symlink='ln -s' # /original/file /symlink/file
+alias network-activity="lsof -P -i -n | awk '{print }' | grep -v COMMAND | sort -u"
+
+
 
 # ------------------------------
 # Functions
 # ------------------------------
 
 cpu-mhz(){
-watch -n1 "lscpu | grep 'МГц' | awk '{print $1}'"
+  watch -n1 "lscpu | grep 'МГц' | awk '{print $1}'"
 }
 
 
 pushup(){
 
-    push $*
+  push $*
     envoy run deploy
 
 }
 
 
 push() {
-            if [[ ! $# -eq 0 ]] ; then
-                git add .
-                git commit -m "$*"
-            fi
-            git push
+  if [[ ! $# -eq 0 ]] ; then
+    git add .
+      git commit -m "$*"
+      fi
+      git push
 }
 
 
 deploy-bbro() {
-            push $*
-            envoy run deploy-bbro
+  push $*
+    envoy run deploy-bbro
 }
 
 deploy-pest() {
-            push $*
-            envoy run deploy-pest
+  push $*
+    envoy run deploy-pest
 }
 
+
+compctl -W /var/www/ -/ cdto
+compctl -W /var/www/ -/ cv
 
 cdto() {
-            cd /var/www/$1
+  cd /var/www/$1
 }
-            compctl -W /var/www/ -/ cdto
+
+v() {
+   gvim; exit;
+}
+
+cv(){
+  cdto $1; v
+}
+
+
