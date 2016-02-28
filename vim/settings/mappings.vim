@@ -8,6 +8,8 @@ nmap <leader>fmt mpgg=G`p
 " --[ Navigation ]----------------------------------------
 " --------------------------------------------------------
 
+nnoremap <leader>cd :cd %:p:h<CR>
+
 " For skipping between buffers
 
 nmap ]b :bnext<CR>

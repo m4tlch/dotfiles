@@ -23,7 +23,7 @@ silent! call pathogen#pathogen#helptags()
 "set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Automatic fold settings for specific files. Uncomment to use.
-autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
+"autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
 
 
 nmap <C-b> :NERDTreeToggle<cr>

@@ -41,10 +41,6 @@ exec pulseaudio --start
 
 
 
-exec_always ~/dotfiles/i3/2moni.sh
-exec_always ~/dotfiles/i3/kbfix.sh
-exec_always ~/dotfiles/i3/wallpaper.sh
-
 
 workspace_auto_back_and_forth yes
 
@@ -57,6 +53,10 @@ exec --no-startup-id terminator
 exec --no-startup-id i3-msg '$w_stuff; exec nemo'
 
 exec setxkbmap -option grp:alt_shift_toggle "us,ru" -option grp_led:caps
+
+exec_always ~/dotfiles/i3/2moni.sh
+exec_always ~/dotfiles/i3/kbfix.sh
+exec_always ~/dotfiles/i3/wallpaper.sh
 
 # class                   border  backgr. text    indicator
 client.focused            #404040 #343434 #ffffff #336699

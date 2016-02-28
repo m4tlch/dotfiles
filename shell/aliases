@@ -7,7 +7,7 @@ alias discaps='xmodmap -e "keycode 66 = Escape NoSymbol Escape" -e "clear lock"'
 
 alias cd-git-root='cd $(git rev-parse --show-cdup)'
 alias s='sudo -s' #sudo with zsh
-
+alias rmf='rm -rf'
 alias pa='php artisan'
 alias chmodweb='sudo chmod -R 777 /var/www'
 
@@ -28,6 +28,7 @@ alias hdd-usage='df -h'
 
 alias casper='casperjs --ignore-ssl-errors=true --ssl-protocol=any'
 alias ff32='/opt/firefox/firefox -jsconsole'
+alias ff42='/opt/firefox42/firefox -jsconsole'
 alias symlink='ln -s' #kuda shto
 
 # ------------------------------
