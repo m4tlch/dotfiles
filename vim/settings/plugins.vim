@@ -57,8 +57,16 @@ nnoremap <F4> :NumbersOnOff<CR>
 
 " autoformat
 
-nnoremap <F6> :Autoformat<cr>
+"nnoremap <F6> :Autoformat<cr>
+nnoremap <F6> mlgg=G`l<cr>
+
 
 let g:formatdef_phpcbf = '"phpcbf"'
 let g:formatters_php = ['phpcbf']
 
+
+" ultisnips
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader>b"
+let g:UltiSnipsJumpBackwardTrigger="<leader>z"

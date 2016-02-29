@@ -8,13 +8,21 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+" snippets common
+
 Plugin 'honza/vim-snippets'
 
+" ultisnips
+Plugin 'SirVer/ultisnips'
+
+" snipmate
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+
+
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdTree'
 Plugin 'jwalton512/vim-blade'
 Plugin 'easymotion/vim-easymotion'
