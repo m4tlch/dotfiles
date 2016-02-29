@@ -64,6 +64,10 @@ nmap \w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " handy way of editing .vimrc
 nnoremap <leader>rc :e ~/.vimrc<CR>
+nnoremap <leader>rcm :e ~/dotfiles/vim/settings/mappings.vim<CR>
+nnoremap <leader>rcp :e ~/dotfiles/vim/settings/plugins.vim<CR>
+nnoremap <leader>rcb :e ~/dotfiles/vim/settings/basic.vim<CR>
+nnoremap <leader>rca :e ~/dotfiles/vim/settings/appearance.vim<CR>
 
 " make Ctrl-Z work
 map <C-z> <Esc>
