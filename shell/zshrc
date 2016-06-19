@@ -7,8 +7,10 @@
 
 export ADOTDIR="$HOME/dotfiles/shell/antigen"
 export TERM="xterm-256color"
+export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="$PATH:~/.composer/vendor/bin"
+export PATH="$PATH:/opt/extras.ubuntu.com/my-weather-indicator/bin/"
+
 # Just for Tmuxinator sake
 export EDITOR=vim
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin/
@@ -20,15 +22,12 @@ source ~/dotfiles/private/shell/aliases
 
 antigen use oh-my-zsh
 
-#antigen theme agnoster
-#antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
-
 export DEFAULT_USER=exfriend
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=5
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-#POWERLEVEL9K_COLOR_SCHEME='light'
+POWERLEVEL9K_COLOR_SCHEME='light'
 
 POWERLEVEL9K_TIME_FOREGROUND='white'
 POWERLEVEL9K_TIME_BACKGROUND='black'
@@ -47,7 +46,7 @@ antigen bundle tarruda/zsh-autosuggestions
 #antigen bundle robbyrussell/oh-my-zsh plugins/archlinux
 
 #antigen bundle robbyrussell/oh-my-zsh plugins/grunt
-antigen bundle robbyrussell/oh-my-zsh plugins/sudo #press Esc Esc to sudo command
+antigen bundle robbyrussell/oh-my-zsh plugins/sudo 
 
 autoload -Uz compinit
 compinit -i

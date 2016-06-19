@@ -1,0 +1,14 @@
+{
+	"groups": {
+		"active_window_status": { "fg": "exbook:blue",   "bg": "exbook:base02", "attrs": [] },
+		"window_status":        { "fg": "exbook:base1",  "bg": "exbook:base02", "attrs": [] },
+		"activity_status":      { "fg": "exbook:yellow", "bg": "exbook:base02", "attrs": [] },
+		"bell_status":          { "fg": "exbook:red",    "bg": "exbook:base02", "attrs": [] },
+		"window":               { "fg": "exbook:base1",  "bg": "exbook:base02", "attrs": [] },
+		"window:divider":       { "fg": "exbook:base01", "bg": "exbook:base02", "attrs": [] },
+		"window:current":       { "fg": "exbook:base3",  "bg": "exbook:base01", "attrs": [] },
+		"window_name":          { "fg": "exbook:base3",  "bg": "exbook:base01", "attrs": ["bold"] },
+		"session":              { "fg": "exbook:base3",  "bg": "laravel", "attrs": [] },
+		"session:prefix":       { "fg": "exbook:base01", "bg": "exbook:base3",  "attrs": [] }
+	}
+}

@@ -12,13 +12,16 @@ set $w_chat Chat
 set $w_files Files
 set $w_stuff 1:Stuff
 
-workspace $w_browser output VGA1
-workspace $w_ide output VGA1
-workspace $w_term output VGA1
-workspace $w_music output VGA1
-workspace $w_chat output VGA1
-workspace $w_files output VGA1
-workspace $w_stuff output LVDS1
+set $large_moni VGA-0
+set $small_moni DVI-I-0
+
+workspace $w_browser output $large_moni
+workspace $w_ide output $large_moni
+workspace $w_term output $larg_moni
+workspace $w_music output $large_moni
+workspace $w_chat output $large_moni
+workspace $w_files output $large_moni
+workspace $w_stuff output $small_moni
 
 
 assign [class="Terminator"] $w_term
@@ -31,6 +34,7 @@ assign [class="Nemo"] $w_files
 assign [class="x-terminal-emulator"] $w_term
 
 exec --no-startup-id nm-applet
+exec --no-startup-id my-weather-indicator
 exec --no-startup-id volti
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id caffeine-indicator
@@ -45,12 +49,12 @@ exec pulseaudio --start
 workspace_auto_back_and_forth yes
 
 
-exec --no-startup-id firefox
+#exec --no-startup-id firefox
 #exec --no-startup-id pstorm
 exec --no-startup-id banshee
 exec --no-startup-id skype
 exec --no-startup-id terminator
-exec --no-startup-id i3-msg '$w_stuff; exec nemo'
+#exec --no-startup-id i3-msg '$w_stuff; exec nemo'
 
 exec setxkbmap -option grp:alt_shift_toggle "us,ru" -option grp_led:caps
 
