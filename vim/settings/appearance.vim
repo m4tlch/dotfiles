@@ -6,7 +6,8 @@ highlight SpecialKey guifg=#A9A9A9
 " Theme
 "
 " set background=light
-set guifont=Input\ Mono\ Semi-Light\ 10
+set guifont=Fira\ Code\ 15
+"set guifont=Input\ Mono\ 13
 set guioptions-=m  "remove menu bar
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -19,7 +20,7 @@ set go-=e " tabs
 
 
 
-set linespace=13
+set linespace=10
 "
 " Force the right number of colours, if the terminal supports it, but
 " vim doesn't realise

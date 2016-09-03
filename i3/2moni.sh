@@ -1,2 +1,2 @@
 #!/bin/sh
-sleep 5 && xrandr --output VGA-0 --primary --mode 1680x1050 --pos 0x0 --rotate normal --output DVI-I-1 --off --output DVI-I-0 --mode 1280x1024 --pos 1680x26 --rotate normal --output HDMI-0 --off
+sleep 5; xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 1280x256 --rotate normal --output VIRTUAL1 --off --output DP1 --off --output VGA1 --mode 1280x1024 --pos 0x0 --rotate normal

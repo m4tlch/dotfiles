@@ -1,1 +1,1 @@
-sleep 5 && feh --bg-scale ~/wps/10.jpg
+sleep 3 && feh --bg-scale ~/dotfiles/wallpapers/10.jpg

@@ -34,10 +34,10 @@ nnoremap k gk
 
 " unnmap arrows
 
-noremap <Right> <nop>
-noremap <Left> <nop>
-noremap <Up> <nop>
-noremap <Down> <nop>
+"noremap <Right> <nop>
+"noremap <Left> <nop>
+"noremap <Up> <nop>
+"noremap <Down> <nop>
 
 
 "Resize vsplit

@@ -5,23 +5,20 @@ alias discaps='xmodmap -e "keycode 66 = Escape NoSymbol Escape" -e "clear lock"'
 # Aliases
 # ------------------------------
 
+alias upd='sudo apt-get update; sudo apt-get upgrade; sudo apt-get dist-upgrade'
 alias reseed='php artisan drop; php artisan migrate:refresh --seed; php artisan bouncer:seed'
 
-alias cd-git-root='cd $(git rev-parse --show-cdup)'
 alias s='sudo -s' #sudo with zsh
 alias rmf='rm -rf'
 alias pa='php artisan'
 alias chmodweb='sudo chmod -R 777 /var/www'
 
 alias in='sudo apt-get install'
-alias cdtoart='cd /var/www/art-v3/'
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m'
 alias gpush='git push'
 alias gpull='git pull'
-# alias laravel='~/.composer/vendor/bin/laravel'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)"'
 alias ebash='vim ~/dotfiles/shell/aliases'
 alias burp='java -jar /opt/burp.jar'
 alias cpu-temperature='sensors'
@@ -29,63 +26,4 @@ alias hdd-temperature='sudo hddtemp /dev/sda'
 alias hdd-usage='df -h'
 
 alias casper='casperjs --ignore-ssl-errors=true --ssl-protocol=any'
-alias ff32='/opt/firefox/firefox -jsconsole'
-alias ff42='/opt/firefox42/firefox -jsconsole'
-alias symlink='ln -s' # /original/file /symlink/file
 alias network-activity="lsof -P -i -n | awk '{print }' | grep -v COMMAND | sort -u"
-
-
-
-# ------------------------------
-# Functions
-# ------------------------------
-
-cpu-mhz(){
-  watch -n1 "lscpu | grep 'МГц' | awk '{print $1}'"
-}
-
-
-pushup(){
-
-  push $*
-    envoy run deploy
-
-}
-
-
-push() {
-  if [[ ! $# -eq 0 ]] ; then
-    git add .
-      git commit -m "$*"
-      fi
-      git push
-}
-
-
-deploy-bbro() {
-  push $*
-    envoy run deploy-bbro
-}
-
-deploy-pest() {
-  push $*
-    envoy run deploy-pest
-}
-
-
-compctl -W /var/www/ -/ cdto
-compctl -W /var/www/ -/ cv
-
-cdto() {
-  cd /var/www/$1
-}
-
-v() {
-   gvim; exit;
-}
-
-cv(){
-  cdto $1; v
-}
-
-
